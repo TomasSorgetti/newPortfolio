@@ -1,0 +1,35 @@
+---
+const arr = [
+  {
+    title: "Learning Spark",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
+  },
+  {
+    title: "ARNALDO",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
+  },
+  {
+    title: "La casa del Luthier",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
+  },
+];
+---
+
+<section class="text-white text-center p-16">
+  <h2 class="text-[2rem] font-bold">Projects</h2>
+  <div class="flex flex-col gap-2">
+    {
+      arr?.map((el) => (
+        <div class="flex flex-col text-start justify-between">
+          <h3 class="font-bold">{el.title}</h3>
+          <p>{el.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style></style>
