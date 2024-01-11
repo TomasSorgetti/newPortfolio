@@ -1,4 +1,6 @@
 ---
+import "@fontsource/days-one";
+import "@fontsource/bai-jamjuree";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 
@@ -19,7 +21,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="h-full relative">
+  <body class="h-full relative font-sans">
     <img
       class="absolute top-0 left-0 -z-20"
       src="../../src/assets/Gradient1.png"
@@ -34,6 +36,11 @@ const { title } = Astro.props;
       class="absolute bottom-0 right-0 -z-20"
       src="../../src/assets/Gradient3.png"
       alt="background filter gradient"
+    />
+    <img
+      class="absolute left-0 w-full -z-20"
+      src="../../src/assets/background_vector.png"
+      alt="vector background"
     />
     <Navigation />
     <main>
@@ -55,13 +62,19 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: system-ui, sans-serif;
     background-color: #050310;
     background-size: 224px;
     scroll-behavior: smooth;
+  }
+  body {
     background-image: url("../assets/background.png");
   }
-  main {
+  span, p{
+    font-family: "Bai Jamjuree", sans-serif;
+  }
+
+  h1 {
+    font-family: "Days One", sans-serif;
   }
   code {
     font-family:
