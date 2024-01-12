@@ -2,30 +2,36 @@
 const arr = [
   {
     title: "Learning Spark",
+    image: "../../src/assets/projects/LearningSpark.png",
+    description:
+      "Learning Spark, una pequeña empresa de tutores para exámenes internacionales. Trabajé a la par de una diseñadora para hacer, inicialmente, una landing page para captar clientes totalmente responsive.",
+  },
+  {
+    title: "Arnaldo",
+    image: "../../src/assets/projects/Arnaldo.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
   },
   {
-    title: "ARNALDO",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
-  },
-  {
-    title: "La casa del Luthier",
+    title: "Portfolio Designer",
+    image: "../../src/assets/projects/PortfolioEuge.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ullam cumque doloribus placeat exercitationem quibusdam. Laboriosam, rerum. Esse delectus adipisci commodi expedita officiis temporibus repellat nobis quas quibusdam facilis!",
   },
 ];
 ---
 
-<section class="text-white text-center p-16">
+<section id="projects" class="text-white text-center">
   <h2 class="text-[2rem] font-bold">Projects</h2>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-10">
     {
       arr?.map((el) => (
-        <div class="flex flex-col text-start justify-between">
-          <h3 class="font-bold">{el.title}</h3>
-          <p>{el.description}</p>
+        <div class="flex flex-col">
+          <img src={el.image} alt={el.title} />
+          <div class="flex flex-col text-left">
+            <h3 class="font-bold text-2xl">{el.title}</h3>
+            <p class="text-textColor text-base">{el.description}</p>
+          </div>
         </div>
       ))
     }

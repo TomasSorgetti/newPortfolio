@@ -1,0 +1,31 @@
+---
+const technologies = [
+  {
+    icon: "",
+    name: "html",
+  },
+  {
+    icon: "",
+    name: "css",
+  },
+  {
+    icon: "",
+    name: "react",
+  },
+];
+---
+
+
+<article class="w-full text-white flex flex-col items-center">
+  <h2 class="text-left w-full uppercase text-2xl font-bold">Technologies</h2>
+  <div class="flex gap-2">
+    {
+      technologies?.map(({ icon, name }) => (
+        <div>
+          <img src={icon} alt={`${name} icon`} />
+          <span>{name}</span>
+        </div>
+      ))
+    }
+  </div>
+</article>

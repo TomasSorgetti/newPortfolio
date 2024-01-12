@@ -38,12 +38,12 @@ const { title } = Astro.props;
       alt="background filter gradient"
     />
     <img
-      class="absolute left-0 w-full -z-20"
+      class="absolute left-0 top-10 w-full -z-20"
       src="../../src/assets/background_vector.png"
       alt="vector background"
     />
     <Navigation />
-    <main>
+    <main class="w-11/12 m-auto">
       <slot />
     </main>
     <Footer />
@@ -69,7 +69,8 @@ const { title } = Astro.props;
   body {
     background-image: url("../assets/background.png");
   }
-  span, p{
+  span,
+  p {
     font-family: "Bai Jamjuree", sans-serif;
   }
 

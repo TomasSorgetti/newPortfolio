@@ -1,14 +1,73 @@
 ---
+const handleClick = () => {
+  console.log("hola");
+};
 ---
-<nav class="uppercase font-thin text-white w-full flex justify-between items-center px-16">
-    <span class="text-[2rem] font-bold">Tomas Sorgetti</span>
-    <ul class="flex gap-4">
-        <li>About</li>
-        <li>Projects</li>
-        <li>Contact</li>
-    </ul>
+
+<nav
+  class="fixed uppercase font-thin text-white w-full flex justify-between items-center px-6 py-8"
+>
+  <span class="text-base font-bold">Tomas Sorgetti</span>
+  <button
+    id="toggle__button"
+    class="flex flex-col gap-[5px] h-full justify-center items-center"
+  >
+    <span class="w-6 h-[3px] rounded bg-textColor"></span>
+    <span class="w-6 h-[3px] rounded bg-textColor"></span>
+    <span class="w-6 h-[3px] rounded bg-textColor"></span>
+  </button>
+  <ul
+    id="nav__menu"
+    class="opacity-0 fixed left-full top-20 flex-col bg-bgColor w-full h-screen text-center gap-10 items-center justify-center"
+  >
+    <li class="nav__link">
+      <a href="#about">About</a>
+    </li>
+    <li class="nav__link">
+      <a href="#projects">Projects</a>
+    </li>
+    <li class="nav__link">
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
 </nav>
 
-<style>
+<script>
+  const toggleButton = document.querySelector("#toggle__button");
+  const navMenu = document.querySelector("#nav__menu");
+  toggleButton.addEventListener("click", () => {
+    toggleButton.classList.toggle("activeButton");
+    navMenu.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav__link").forEach((li) =>
+    li.addEventListener("click", () => {
+      toggleButton.classList.remove("activeButton");
+      navMenu.classList.remove("active");
+    })
+  );
+</script>
 
+<style>
+  .activeButton {
+    position: relative;
+  }
+  .activeButton span:nth-child(2) {
+    opacity: 0;
+  }
+  .activeButton span:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+    transition: 0.5s;
+  }
+  .activeButton span:nth-child(3) {
+    position: absolute;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+  }
+  .active {
+    display: flex;
+    opacity: 1;
+    left: 0;
+    transition: 0.5s;
+  }
 </style>
