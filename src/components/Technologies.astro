@@ -1,31 +1,32 @@
 ---
 const technologies = [
-  {
-    icon: "",
-    name: "html",
-  },
-  {
-    icon: "",
-    name: "css",
-  },
-  {
-    icon: "",
-    name: "react",
-  },
+  "html",
+  "css",
+  "tailwind",
+  "javascript",
+  "react",
+  "redux",
+  "node",
+  "express",
+  "sequelize",
 ];
 ---
 
-
-<article class="w-full text-white flex flex-col items-center">
-  <h2 class="text-left w-full uppercase text-2xl font-bold">Technologies</h2>
-  <div class="flex gap-2">
+<div
+  class="pt-20 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] w-[250px] mx-[calc((100%-250px)/2)] md:w-[750px] md:mx-[calc((100%-750px)/2)]"
+>
+  <ul
+    class="flex items-center justify-center md:justify-start xl:[&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+  >
     {
-      technologies?.map(({ icon, name }) => (
-        <div>
-          <img src={icon} alt={`${name} icon`} />
-          <span>{name}</span>
-        </div>
+      technologies?.map((el) => (
+        <li
+          class="text-[3rem] text-white font-bold uppercase mx-2"
+          style="text-shadow: 0px 3px 8px rgb(132, 57, 249)"
+        >
+          {el}
+        </li>
       ))
     }
-  </div>
-</article>
+  </ul>
+</div>
