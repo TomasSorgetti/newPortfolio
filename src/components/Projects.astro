@@ -3,6 +3,7 @@ const arr = [
   {
     title: "Learning Spark",
     image: "../../src/assets/projects/LearningSpark.png",
+    technologies: ["react", "tailwind"],
     description:
       "Learning Spark, una pequeña empresa de tutores para exámenes internacionales. Trabajé a la par de una diseñadora para hacer, inicialmente, una landing page para captar clientes totalmente responsive.",
   },
@@ -21,16 +22,32 @@ const arr = [
 ];
 ---
 
-<section id="projects" class="text-white text-center">
-  <h2 class="text-[2rem] font-bold">Projects</h2>
-  <div class="flex flex-col gap-10">
+<section id="projects" class="text-white text-center pt-20">
+  <h2 class="text-titles uppercase font-bold">Projects</h2>
+  <div class="flex flex-col gap-10 py-16">
     {
       arr?.map((el) => (
-        <div class="flex flex-col">
-          <img src={el.image} alt={el.title} />
-          <div class="flex flex-col text-left">
-            <h3 class="font-bold text-2xl">{el.title}</h3>
-            <p class="text-textColor text-base">{el.description}</p>
+        <div class="flex flex-col gap-2 md:flex-row md:gap-4">
+          <img
+            class="md:w-[360px] lg:w-[430px] xl:w-[480px]"
+            src={el.image}
+            alt={el.title}
+          />
+          <div class="flex flex-col text-left xl:w-[calc(100%-16px-480px)] md:h-full!important md:justify-between">
+            <div class="flex flex-col text-left">
+              <h3 class="font-bold text-subtitles">{el.title}</h3>
+              <p class="text-textColor text-base">{el.description}</p>
+            </div>
+            <div class="w-full flex gap-2 justify-start">
+              {el.technologies?.map((tec) => (
+                <span
+                  class="text-base"
+                  style="text-shadow: 0px 3px 8px rgb(132, 57, 249)"
+                >
+                  {tec}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))
@@ -38,4 +55,6 @@ const arr = [
   </div>
 </section>
 
-<style></style>
+<style>
+
+</style>
